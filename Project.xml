@@ -4,7 +4,7 @@
 
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Funkin': Stage Editor" file="Stage Editor" main="Main" version="0.0.1" company="Lego0_77" />
+	<app title="Friday Night Funkin': Stage Editor" file="Stage Editor" packageName="com.stageeditor.psychengine" package="com.stageeditor.psychengine" main="Main" version="0.0.1" company="Lego0_77" />
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
@@ -25,7 +25,8 @@
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" />
 
 	<!--Mobile-specific-->
-	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
+	<window if="mobile" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="false"/>
+
 
 	<!-- _____________________________ Path Settings ____________________________ -->
 
@@ -43,6 +44,10 @@
 
 	<!--In case you want to use the ui package-->
 	<haxelib name="flixel-ui" />
+  <haxelib name="AndroidTools" if="android"/>
+  
+  <config:android permission="android.permission.READ_EXTERNAL_STORAGE" if="android"/>
+  <config:android permission="android.permission.WRITE_EXTERNAL_STORAGE" if="android"/>
 
 	<!--In case you want to use nape with flixel-->
 	<!--<haxelib name="nape-haxe4" />-->
@@ -59,8 +64,8 @@
 	<!--<haxedef name="FLX_NO_NATIVE_CURSOR" />-->
 
 	<!--Optimise inputs, be careful you will get null errors if you don't use conditionals in your game-->
-	<haxedef name="FLX_NO_MOUSE" if="mobile" />
-	<haxedef name="FLX_NO_KEYBOARD" if="mobile" />
+	<haxedef name="FLX_NO_MOUSE" if="desktop" />
+	<haxedef name="FLX_NO_KEYBOARD" if="desktop" />
 	<haxedef name="FLX_NO_TOUCH" if="desktop" />
 	<!--<haxedef name="FLX_NO_GAMEPAD" />-->
 
