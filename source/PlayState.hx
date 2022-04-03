@@ -118,6 +118,11 @@ class PlayState extends FlxState
 		createTabMenu('Stage Settings');
 		createTabMenu('Stage Files');
 
+                #if android
+		addVirtualPad(FULL, FULL);
+                addPadCamera();
+                #end
+
 		super.create();
 	}
 
